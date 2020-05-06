@@ -1,0 +1,19 @@
+{
+  "name": "hndrxx.rest",
+  "version": "1.0.0",
+  "description": "A free REST API for random Future (Nayvadius Wilburn) quotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patelaman/hndrxx.rest.git"
+  },
+  "author": "Aman Patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patelaman/hndrxx.rest/issues"
+  },
+  "homepage": "https://github.com/patelaman/hndrxx.rest#readme"
+}
