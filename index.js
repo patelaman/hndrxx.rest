@@ -8,7 +8,7 @@ async function handleRequest(request) {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     var header = request.headers.get('Content-Type')
     if (header === 'application/json') {
-        return new Response(JSON.stringify(randomQuote), {
+        return new Response(JSON.stringify({ quote: randomQuote }), {
             headers: { 'Content-Type': 'application/json' },
         })
     } else {
