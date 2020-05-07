@@ -3,16 +3,16 @@ addEventListener('fetch', event => {
 })
   
 async function handleRequest(request) {
-    // get quotes from http request
-    // parse json out
-    // assign random quote
+    const quotes = JSON.parse(
+        await (await fetch('https://raw.githubusercontent.com/patelaman/hndrxx.rest/quotes/quotes.json')).text());
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     var header = request.headers.get('Content-Type')
     if (header === 'application/json') {
-        return new Response(JSON.stringify(cache), {
+        return new Response(JSON.stringify(randomQuote), {
             headers: { 'Content-Type': 'application/json' },
         })
     } else {
-        return new Response(cache, {
+        return new Response(randomQuote, {
             headers: { 'Content-Type': 'text/html' },
         })
     }
