@@ -12,12 +12,18 @@ async function handleRequest(request) {
         let formatParameter = url.searchParams.get('format').toLocaleLowerCase().split('/')[0]
         if (formatParameter === 'text') {
             return new Response(randomQuote, {
-                headers: { 'Content-Type': 'text/html' },
+                headers: { 
+                    'Content-Type': 'text/html',
+                    'Access-Control-Allow-Origin': '*'
+                },
             })
         }
     }
 
     return new Response(JSON.stringify({ quote: randomQuote }), {
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+            'Content-Type': 'text/html',
+            'Access-Control-Allow-Origin': '*'
+        },
     })
 }
